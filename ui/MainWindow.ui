@@ -1,0 +1,1775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Shop</class>
+ <widget class="QMainWindow" name="Shop">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Shop</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #F0F0F0;
+    border: none;
+}
+
+QWidget#catalogWidget {
+    border: 2px solid #654321;
+    border-radius: 0px;
+    background-color: #F5F5DC;
+}
+
+QHeaderView::section {
+    background-color: #654321;
+    color: white;
+    font-weight: normal;
+    padding: 6px;
+    border: 1px solid #654321;
+    border-radius: 0px;
+}
+
+QTreeWidget::item {
+    padding: 8px;
+}
+
+QTreeWidget::item:hover {
+    background-color: #e0d5c3;
+    color: #333333;
+}
+
+QTreeWidget::indicator {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #654321;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QMainWindow {
+    background-color:#F5F5DC;
+    border: 1px solid #D2B48C;
+    border-radius: 10px;
+}
+</string>
+   </property>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>11</y>
+      <width>1344</width>
+      <height>746</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="pageSignIn">
+     <widget class="QLabel" name="label_signin">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>60</y>
+        <width>291</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Вход</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_phone">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>230</y>
+        <width>371</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+      </property>
+      <property name="placeholderText">
+       <string>Введите номер телефона</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_signin">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>370</y>
+        <width>371</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Войти</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_psw">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>300</y>
+        <width>371</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+      </property>
+      <property name="placeholderText">
+       <string>Введите пароль</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_signup_2">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>480</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Регистрация</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="pageSignUp">
+     <widget class="QLineEdit" name="lineEdit_psw_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>270</y>
+        <width>371</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+      </property>
+      <property name="placeholderText">
+       <string>Придумайте пароль</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_phone_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>410</y>
+        <width>371</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+      </property>
+      <property name="placeholderText">
+       <string>Введите номер телефона</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_email">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>340</y>
+        <width>371</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+      </property>
+      <property name="placeholderText">
+       <string>Введите email</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_signup">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>30</y>
+        <width>291</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Регистрация</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_name">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>200</y>
+        <width>371</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+      </property>
+      <property name="placeholderText">
+       <string>Введите имя</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>480</y>
+        <width>321</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>7</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>Даю согласие на обработку персональных данных</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoRepeat">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_signup">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>510</y>
+        <width>371</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Зарегистрироваться</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_signin_2">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>590</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Войти</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_MainShop">
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1341</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_technolite">
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>TechnoLite</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_search">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>700</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+         </property>
+         <property name="placeholderText">
+          <string>Поиск товаров</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_orders">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Заказы</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_cart">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Корзина</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_pers_acc">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Личный кабинет</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>341</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget {
+    border: 2px solid #654321;
+    border-radius: 8px;
+}</string>
+      </property>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>341</width>
+         <height>651</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_catalog">
+        <item>
+         <widget class="QTreeWidget" name="treeWidget_category">
+          <property name="styleSheet">
+           <string notr="true">
+QTreeWidget::item:hover {
+    background-color: #e0d5c3;
+    color: #333333;
+}
+
+QTreeWidget::item:selected {
+    background-color: #d2b48c;
+    color: black;
+}
+
+QTreeWidget::item:selected:active {
+    border: none;
+}
+
+QTreeWidget::indicator {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #654321;
+}</string>
+          </property>
+          <property name="headerHidden">
+           <bool>false</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string notr="true">Каталог</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QScrollArea" name="scrollAreaProducts">
+      <property name="geometry">
+       <rect>
+        <x>369</x>
+        <y>86</y>
+        <width>971</width>
+        <height>641</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollArea">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>969</width>
+         <height>639</height>
+        </rect>
+       </property>
+       <widget class="QWidget" name="productGridWidget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>-1</x>
+          <y>-1</y>
+          <width>971</width>
+          <height>641</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_orders">
+     <widget class="QWidget" name="verticalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>130</y>
+        <width>1291</width>
+        <height>421</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_orders">
+       <item>
+        <widget class="QTableWidget" name="tableWidget_orders">
+         <attribute name="horizontalHeaderVisible">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>300</number>
+         </attribute>
+         <attribute name="horizontalHeaderHighlightSections">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>50</number>
+         </attribute>
+         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Номер заказа</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Дата</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Сумма</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Адрес</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Статус заказа</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Статус оплаты</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_orders">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>20</y>
+        <width>291</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string>Заказы</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_orders_shop">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>630</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Вернуться в магазин</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_cart">
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>130</y>
+        <width>1291</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_cart">
+       <item>
+        <widget class="QTableWidget" name="tableWidget_cart">
+         <property name="autoScroll">
+          <bool>true</bool>
+         </property>
+         <property name="tabKeyNavigation">
+          <bool>true</bool>
+         </property>
+         <property name="showDropIndicator" stdset="0">
+          <bool>true</bool>
+         </property>
+         <attribute name="horizontalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>321</number>
+         </attribute>
+         <attribute name="horizontalHeaderHighlightSections">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>50</number>
+         </attribute>
+         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Название</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Цена</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Количество</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Итого</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_cart">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>20</y>
+        <width>291</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string>Корзина</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>450</y>
+        <width>561</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;</string>
+      </property>
+      <property name="text">
+       <string>Общая сумма товаров в корзине: 0.00 руб.</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_orders_cart">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>570</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Оформить заказ</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_clear_cart">
+      <property name="geometry">
+       <rect>
+        <x>720</x>
+        <y>570</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Очистить корзину</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_pers_acc">
+     <widget class="QLabel" name="label_pers_acc">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>20</y>
+        <width>331</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string>Личный кабинет</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_name">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>200</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string>Имя</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_email">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>280</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string>Email</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_phone">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>360</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string>Телефон</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_name_2">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>190</y>
+        <width>371</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_email_2">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>270</y>
+        <width>371</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_phone_3">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>350</y>
+        <width>371</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_pers_acc_shop">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>590</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>В магазин</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_product">
+     <widget class="QLabel" name="label_image">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>341</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Фото</string>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_name_product">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>40</y>
+        <width>711</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>19</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_price">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>150</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string>Цена:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_input_price">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>150</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_price_2">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>220</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string>Описание:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>230</y>
+        <width>561</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #654321;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>380</y>
+        <width>671</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="styleSheet">
+          <string notr="true">QTabWidget {
+    background-color: #f5f5f5;  /* Фоновый цвет для всего QTabWidget */
+    border: 1px solid #654321;   /* Темная граница вокруг QTabWidget */
+    border-radius: 5px;  /* Закругленные углы */
+}
+
+QTabWidget::pane {
+    border: none;  /* Убираем лишнюю границу вокруг вкладок */
+}
+
+QTabBar::tab {
+    background-color: #a68b6a;  /* Цвет фона для вкладки по умолчанию */
+    color: #333333;  /* Цвет текста вкладки по умолчанию */
+    padding: 10px;
+    border: 1px solid #654321;   /* Граница вокруг вкладки */
+    border-radius: 5px;   /* Закругленные углы для вкладки */
+}
+
+QTabBar::tab:hover {
+    background-color: #8c6f50;  /* Цвет фона при наведении (темнее) */
+    color: black;  /* Цвет текста при наведении */
+}
+
+QTabBar::tab:selected {
+    background-color: #654321;  /* Цвет фона для выбранной вкладки */
+    color: white;  /* Цвет текста для выбранной вкладки */
+}
+
+QTabBar::tab:selected:active {
+    border: 2px solid #654321;  /* Более выраженная граница для активной вкладки */
+}
+
+QTabBar::indicator {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #654321;  /* Темная граница для индикатора */
+}</string>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tab_characteristic">
+          <attribute name="title">
+           <string>Характеристики</string>
+          </attribute>
+          <widget class="QTableWidget" name="tableWidget_tab">
+           <property name="geometry">
+            <rect>
+             <x>-5</x>
+             <y>1</y>
+             <width>681</width>
+             <height>311</height>
+            </rect>
+           </property>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>325</number>
+           </attribute>
+           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>true</bool>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>Характеристика</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Значение</string>
+            </property>
+           </column>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="tab_reviews">
+          <attribute name="title">
+           <string>Отзывы</string>
+          </attribute>
+          <widget class="QLabel" name="label_rating">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>231</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #654321;
+</string>
+           </property>
+           <property name="text">
+            <string>Оценка товара (от 1 до 5):</string>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="spinBox_rating">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>20</y>
+             <width>261</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QSpinBox {
+    border: 1px solid #654321;  /* Темно-коричневая граница */
+    border-radius: 5px;         /* Закругленные углы */
+}
+
+QSpinBox::up-button {
+    background-color: #8c6f4f;  /* Светло-коричневая кнопка */
+    border: none;               /* Без рамки вокруг кнопки */
+}
+
+QSpinBox::down-button {
+    background-color: #8c6f4f;  /* Светло-коричневая кнопка */
+    border: none;               /* Без рамки вокруг кнопки */
+}
+
+QSpinBox::up-button:hover,
+QSpinBox::down-button:hover {
+    background-color: #a68b6a;  /* Немного более темный коричневый при наведении */
+}
+</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_description">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>70</y>
+             <width>91</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #654321;
+</string>
+           </property>
+           <property name="text">
+            <string>Описание:</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_description">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>110</y>
+             <width>501</width>
+             <height>191</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+QLineEdit::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+    font-style: italic;
+}
+
+QLineEdit:focus {
+    border: 2px solid #A0522D;
+    background-color: #FFFFFF;
+}</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btn_submit">
+           <property name="geometry">
+            <rect>
+             <x>530</x>
+             <y>260</y>
+             <width>131</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton:enabled {
+    background-color: #654321;
+    color: white;
+    border-radius: 8px;
+}
+
+QPushButton:disabled {
+    background-color: rgba(160, 82, 45, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Отправить</string>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
